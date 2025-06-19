@@ -1,3 +1,21 @@
+# ⚠️ DEPRECATED - This package has been merged upstream
+
+**This repository is now deprecated and archived.** All functionality from this fork has been merged into the official [@magiclabs/wagmi-connector](https://www.npmjs.com/package/@magiclabs/wagmi-connector) package.
+
+**Please use the official package instead:**
+
+```bash
+npm install @magiclabs/wagmi-connector
+```
+
+For the latest documentation and updates, visit the [official Magic Labs repository](https://github.com/magiclabs/wagmi-magic-connector).
+
+---
+
+_Original README content below for reference:_
+
+---
+
 # WAGMI Magic Connector
 
 [WAGMI](https://wagmi.sh/) Connector to connect with [Magic](https://magic.link/). Magic is a developer SDK that you can integrate into your application to enable passwordless authentication using magic links, OTPs, OAuth from third-party services, and more for your web3 App.
@@ -29,7 +47,8 @@ Special thanks to the [Everipedia](https://github.com/EveripediaNetwork) team fo
   - [**Example repositories:**](#example-repositories)
 
 # ⬇️ Install
-Two versions of the `wagmi-magic-connector` are available, each designed to support different WAGMI versions. 
+
+Two versions of the `wagmi-magic-connector` are available, each designed to support different WAGMI versions.
 
 Note: **It is crucial not to mix up these versions to ensure compatibility and functionality.**
 
@@ -56,7 +75,7 @@ We actively encourage the community to participate in testing the versions of `w
 The package contains two main connector classes: `DedicatedWalletConnector` & `UniversalWalletConnector`
 
 `DedicatedWalletConnector` is a connector integrated to the [Dedicated Wallet](https://magic.link/docs/dedicated/overview)
-product. It is useful if you need to assign an address to your user. 
+product. It is useful if you need to assign an address to your user.
 
 `UniversalWalletConnector` is a connector integrated to the [Universal Wallet](https://magic.link/docs/universal/overview)
 product. It can be used to assign a read-write wallet to your user.
@@ -66,7 +85,10 @@ DEPRECATED: `MagicAuthConnector` and `MagicConnectConnector` have been replaced 
 # ⭐ Usage
 
 ```javascript
-import { dedicatedWalletConnector, universalWalletConnector } from '@magiclabs/wagmi-connector';
+import {
+  dedicatedWalletConnector,
+  universalWalletConnector,
+} from "@magiclabs/wagmi-connector";
 
 // Dedicated Wallet integration
 const connector = dedicatedWalletConnector({
@@ -76,7 +98,7 @@ const connector = dedicatedWalletConnector({
   },
 });
 
-// Universal Wallet integration 
+// Universal Wallet integration
 const connector = universalWalletConnector({
   options: {
     apiKey: YOUR_MAGIC_PUBLISHABLE_API_KEY, //required
@@ -91,24 +113,24 @@ const connector = universalWalletConnector({
 
 The following can be passed to connector options object:
 
-| Key                   | Value                      | `DedicatedWalletConnector` support | `UniversalWalletConnector` support | Description                                                                                                                                                                    |
-|-----------------------|----------------------------|------------------------------|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| accentColor           | css color (hex/rgb/etc...) | ✔️	                          | ✔️                              | 🎨 (Optional) Makes modal to use the custom accentColor instead of default purple                                                                                              |
-| isDarkMode            | true / false               | ✔️	                          | ✔️                              | 🎨 (Optional) Makes modal dark mode if true. Default value is false                                                                                                            |
-| customLogo            | path_to_logo / url         | ✔️	                          | ✔️                              | 🎨 (Optional) Makes modal to use the custom logo instead of default magic logo                                                                                                 |
-| customHeaderText            | string                     | ✔️	                          | ✔️                              | 🎨 (Optional) Makes modal to use the custom header text instead of default text at the bottom of logo                                                                          |
-| enableSMSLogin        | true / false               | ✔️	                          | ❌                               | 🌟 (Optional) Makes modal to enable SMS login if true. Default value is false                                                                                                  |
-| enableEmailLogin      | true / false               | ✔️	                          | ❌                               | 🌟 (Optional) Makes modal to disable Email login if false. Default value is true                                                                                               |
-| OAuthOptions          | object                     | ✔️	                          | ❌                               | 🌟 (Optional) Makes modal to enable OAuth login according to configuration passed.                                                                                             |
-| magicSdkConfiguration | object                     | ✔️	                          | ✔️                              | 🛠️ (Optional) Pass additional options to Magic constructor (refer [Magic API documentation](https://magic.link/docs/api-reference/client-side-sdks/web#constructor) for more) |
-| networks              | array of EthNetworkConfiguration | ❌                     | ✔️                              | 🛠️ (Optional) Pass the list of network compatible to switch networks |
+| Key                   | Value                            | `DedicatedWalletConnector` support | `UniversalWalletConnector` support | Description                                                                                                                                                                   |
+| --------------------- | -------------------------------- | ---------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| accentColor           | css color (hex/rgb/etc...)       | ✔️                                 | ✔️                                 | 🎨 (Optional) Makes modal to use the custom accentColor instead of default purple                                                                                             |
+| isDarkMode            | true / false                     | ✔️                                 | ✔️                                 | 🎨 (Optional) Makes modal dark mode if true. Default value is false                                                                                                           |
+| customLogo            | path_to_logo / url               | ✔️                                 | ✔️                                 | 🎨 (Optional) Makes modal to use the custom logo instead of default magic logo                                                                                                |
+| customHeaderText      | string                           | ✔️                                 | ✔️                                 | 🎨 (Optional) Makes modal to use the custom header text instead of default text at the bottom of logo                                                                         |
+| enableSMSLogin        | true / false                     | ✔️                                 | ❌                                 | 🌟 (Optional) Makes modal to enable SMS login if true. Default value is false                                                                                                 |
+| enableEmailLogin      | true / false                     | ✔️                                 | ❌                                 | 🌟 (Optional) Makes modal to disable Email login if false. Default value is true                                                                                              |
+| OAuthOptions          | object                           | ✔️                                 | ❌                                 | 🌟 (Optional) Makes modal to enable OAuth login according to configuration passed.                                                                                            |
+| magicSdkConfiguration | object                           | ✔️                                 | ✔️                                 | 🛠️ (Optional) Pass additional options to Magic constructor (refer [Magic API documentation](https://magic.link/docs/api-reference/client-side-sdks/web#constructor) for more) |
+| networks              | array of EthNetworkConfiguration | ❌                                 | ✔️                                 | 🛠️ (Optional) Pass the list of network compatible to switch networks                                                                                                          |
 
 ## `options.OAuthOptions`
 
 The following can be passed to options.OAuthOptions object to configure OAuth login:
 
-| Key         | Value           | Description                                                                                               |
-|-------------|------------------|-----------------------------------------------------------------------------------------------------------|
+| Key         | Value            | Description                                                                                               |
+| ----------- | ---------------- | --------------------------------------------------------------------------------------------------------- |
 | providers   | array of strings | 🌟 (Required) List of providers to enable. check out all possible providers in OAuthOptions section above |
 | callbackUrl | string           | 🌟 (Optional) Callback URL to redirect to after authentication. Default value is current URL.             |
 
@@ -135,12 +157,12 @@ You can provide a callback URL to redirect the user to after authentication. the
 # 🍀 Supported Logins
 
 | Key                        | `DedicatedWalletConnector` support | `UniversalWalletConnector` support |
-|----------------------------|------------------------------|---------------------------------|
-| Email                      | ✔️	                          | ✔️	                             |
-| SMS                        | ✔️	                          | ❌                               |
-| Social Logins              | ✔️	                          | ❌                               |
-| WebAuthn                   | ❌                            | ❌                               |
-| Multifactor Authentication | ❌                            | ❌                               |
+| -------------------------- | ---------------------------------- | ---------------------------------- |
+| Email                      | ✔️                                 | ✔️                                 |
+| SMS                        | ✔️                                 | ❌                                 |
+| Social Logins              | ✔️                                 | ❌                                 |
+| WebAuthn                   | ❌                                 | ❌                                 |
+| Multifactor Authentication | ❌                                 | ❌                                 |
 
 # 🔆 Examples
 
@@ -152,16 +174,15 @@ You configure OAuth with magic by adding the following options to the connector:
 const connector = dedicatedWalletConnector({
   options: {
     apiKey: YOUR_MAGIC_PUBLISHABLE_API_KEY, //required
-    oauthOptions : {
-      providers: ['facebook', 'google', 'twitter'],
-      callbackUrl: 'https://your-callback-url.com', //optional
-    }
+    oauthOptions: {
+      providers: ["facebook", "google", "twitter"],
+      callbackUrl: "https://your-callback-url.com", //optional
+    },
   },
-})
+});
 ```
 
 To retrieve the Magic redirect result when a user is authenticated and logged in, use `JSON.parse(localStorage.getItem("magicRedirectResult"))`. This will give you access to the redirect result object. The object will be removed from localStorage once the user disconnects.
-
 
 ## 📲 Enable SMS Authentication
 
@@ -192,28 +213,27 @@ const connector = dedicatedWalletConnector({
   },
 });
 ```
-  
 
 ## 🎨 Modal Customization
 
 You can customize the modal's theme, default accent color, logo and header text.
 
 ```javascript
-import { dedicatedWalletConnector } from '@magiclabs/wagmi-connector';
+import { dedicatedWalletConnector } from "@magiclabs/wagmi-connector";
 
 const connector = dedicatedWalletConnector({
   options: {
     apiKey: YOUR_MAGIC_PUBLISHABLE_API_KEY,
-    accentColor: '#ff0000',
-    customLogo: 'https://example.com/logo.png',
-    headerText: 'Login to your account',
+    accentColor: "#ff0000",
+    customLogo: "https://example.com/logo.png",
+    headerText: "Login to your account",
     isDarkMode: true,
   },
 });
 ```
 
 check out the [API Section](#-api) for more information.
-for complete styling, you can override styles of the modal with ```! important```.
+for complete styling, you can override styles of the modal with `! important`.
 
 # 📚 Additional Resources
 
@@ -224,21 +244,21 @@ To use the connector with Rainbow kit, create a new file `RainbowMagicConnector.
 ```javascript
 // RainbowMagicConnector.ts
 
-import { universalWalletConnector } from '@magiclabs/wagmi-connector';
+import { universalWalletConnector } from "@magiclabs/wagmi-connector";
 
 export const rainbowMagicConnector = ({ chains }: any) => ({
-  id: 'magic',
-  name: 'Magic',
-  iconUrl: 'https://svgshare.com/i/iJK.svg',
-  iconBackground: '#fff',
+  id: "magic",
+  name: "Magic",
+  iconUrl: "https://svgshare.com/i/iJK.svg",
+  iconBackground: "#fff",
   createConnector: () => {
     const connector = universalWalletConnector({
       chains: chains,
       options: {
-        apiKey: 'YOUR_MAGIC_CONNECT_API_KEY',
+        apiKey: "YOUR_MAGIC_CONNECT_API_KEY",
         magicSdkConfiguration: {
           network: {
-            rpcUrl: 'https://polygon-rpc.com', // your ethereum, polygon, or optimism mainnet/testnet rpc URL
+            rpcUrl: "https://polygon-rpc.com", // your ethereum, polygon, or optimism mainnet/testnet rpc URL
             chainId: 137,
           },
         },
@@ -256,7 +276,7 @@ export const rainbowMagicConnector = ({ chains }: any) => ({
 > to properly work.
 
 Import the above file to your application root where you wrap your application with `WagmiConfig` component.
-pass the ```client``` prop with ```createClient``` instance to the `WagmiConfig` component as shown below:
+pass the `client` prop with `createClient` instance to the `WagmiConfig` component as shown below:
 
 ```javascript
 // App.tsx
@@ -266,7 +286,7 @@ const { chains, publicClient, webSocketPublicClient } =
   configureChains(YOUR_CHAIN_CONFIG);
 const connectors = connectorsForWallets([
   {
-    groupName: 'Recommended',
+    groupName: "Recommended",
     wallets: [
       //... other wallets connectors
       rainbowMagicConnector({ chains }),
@@ -274,10 +294,10 @@ const connectors = connectorsForWallets([
   },
 ]);
 const wagmiConfig = createConfig({
-	autoConnect: false,
-	connectors,
-	publicClient,
-	webSocketPublicClient
+  autoConnect: false,
+  connectors,
+  publicClient,
+  webSocketPublicClient,
 });
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -293,6 +313,7 @@ export default MyApp;
 
 This procedure might change depending on the version of Rainbow kit you are using so please check the documentation of the Rainbow kit if it is not working.
 
-## **Example repositories:** 
+## **Example repositories:**
+
 - https://github.com/Royal-lobster/vanilla-magic-example
 - https://github.com/Royal-lobster/rainbow-magic-example (With Rainbowkit 🌈)
